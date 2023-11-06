@@ -1,7 +1,5 @@
 pipeline {
- agent {
-    label 'docker' 
-  }
+agent any
 environment {
 // Ajouter la variable dh_cred comme variables d'authentification
 DOCKERHUB_CREDENTIALS = credentials('dh_cred')
