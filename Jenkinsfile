@@ -1,12 +1,12 @@
 pipeline {
-agent any
+ agent {
+    label 'docker' 
+  }
 environment {
 // Ajouter la variable dh_cred comme variables d'authentification
 DOCKERHUB_CREDENTIALS = credentials('dh_cred')
 }
- agent {
-    label 'docker' 
-  }
+
 triggers {
 pollSCM('*/5 * * * *') // Vérifier toutes les 5 minutes
 }
