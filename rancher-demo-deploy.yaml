@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-sqlite-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-sqlite-app
+  template:
+    metadata:
+      labels:
+        app: express-sqlite-app
+    spec:
+      containers:
+        - name: express-sqlite-app
+          image: samiayachi/express-sqlite-app
+          ports:
+            - containerPort: 3000
